@@ -37,3 +37,41 @@ Day 01 focuses on:
 ```bash
 git clone <repository-url>
 cd production-cloud-platform
+
+## Day 02 — PostgreSQL and Docker Compose
+
+The application was extended into a multi-container architecture using Docker Compose.
+
+### Services
+
+- Flask Backend
+- PostgreSQL 16
+
+### DevOps Practices
+
+- Docker Compose
+- Service discovery
+- Private Docker network
+- Environment-based configuration
+- Persistent database volume
+- PostgreSQL health checks
+- Application readiness checks
+- Container restart policy
+- Database persistence testing
+
+### Architecture
+
+```text
+                 Docker Compose
+                      |
+          +-----------+-----------+
+          |                       |
+          v                       v
+     Flask Backend           PostgreSQL
+       :5000                    :5432
+          |                       |
+          +----------+------------+
+                     |
+              Private Network
+                     |
+              Persistent Volume
